@@ -1038,7 +1038,7 @@ const NetworkIndicator = new Lang.Class({
         this.current_out_value = new St.Label({style_class:'value_label'});
 
         this.maximum_label = new St.Label({style_class:'title_label'});
-        this.maximum_label.set_text("Maximum (over 2 hours):");
+        this.maximum_label.set_text("Peak (last 2 hours):");
 
         this.maximum_in_label = new St.Label({style_class:'description_label'});
         this.maximum_in_label.set_text("Inbound");
@@ -1108,8 +1108,8 @@ const NetworkIndicator = new Lang.Class({
         this._last_time = 0;
         this._total = 0;
 
-        this.addDataSet('network-in-used', 'network-ok-color');
-        this.addDataSet('network-out-used', 'network-ok-color');
+        this.addDataSet('network-in-used', 'network-down-color');
+        this.addDataSet('network-out-used', 'network-up-color');
         this.enable();
     },
 
@@ -1211,18 +1211,18 @@ const NetworkIndicator = new Lang.Class({
             }
 
             /* Report errors for incoming traffic */
-            if (this._previous[1] > 0 || this._previous[4] > 0) {
+/*            if (this._previous[1] > 0 || this._previous[4] > 0) {
                 this.stats['network-in-used'].color = "network-bad-color";
             } else {
-                this.stats['network-in-used'].color = "network-ok-color";
-            }
+                this.stats['network-in-used'].color = "network-down-color";
+            }*/
 
             /* Report errors for outgoing traffic */
-            if (this._previous[3] > 0 || this._previous[4] > 0) {
+/*            if (this._previous[3] > 0 || this._previous[4] > 0) {
                 this.stats['network-out-used'].color = "network-bad-color";
             } else {
-                this.stats['network-out-used'].color = "network-ok-color";
-            }
+                this.stats['network-out-used'].color = "network-up-color";
+            }*/
         }
         this._last_time = time;
     }
