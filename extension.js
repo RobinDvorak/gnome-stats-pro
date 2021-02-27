@@ -33,7 +33,7 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Convenience = Me.imports.convenience;
 
-const INDICATOR_UPDATE_INTERVAL = 250;
+const INDICATOR_UPDATE_INTERVAL = 2000;
 const INDICATOR_NUM_GRID_LINES = 3;
 
 const ITEM_LABEL_SHOW_TIME = 0.15;
@@ -681,7 +681,7 @@ const CpuIndicator = new Lang.Class({
 
     _init: function() {
         this.parent({
-            updateInterval: 250,
+            updateInterval: INDICATOR_UPDATE_INTERVAL,
             decay: 0.2
         });
 
@@ -798,7 +798,7 @@ const MemoryIndicator = new Lang.Class({
 
     _init: function() {
         this.parent({
-            updateInterval: 1000
+            updateInterval: INDICATOR_UPDATE_INTERVAL
         });
 
         this.current_label = new St.Label({style_class:'title_label'});
@@ -946,7 +946,7 @@ const SwapIndicator = new Lang.Class({
 
     _init: function() {
         this.parent({
-            updateInterval: 2000
+            updateInterval: INDICATOR_UPDATE_INTERVAL
         });
 
         this.current_label = new St.Label({style_class:'title_label'});
