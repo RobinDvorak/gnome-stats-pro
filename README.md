@@ -14,7 +14,9 @@ display of historical utilizations.
 ## Requirements
 
 * libgtop
-  * Ubuntu 17.04 users should install the `gir1.2-gtop-2.0` package.
+```
+sudo apt install libgtop2-dev
+```
 
 ## How to Download
 
